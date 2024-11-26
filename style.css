@@ -10,7 +10,8 @@ body {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
-    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
 }
 
 .header {
@@ -21,61 +22,24 @@ body {
     width: 100%;
     justify-content: space-around;
     align-items: center;
-    transition: 0.6s;
     padding: 25px 0 25px 25px;
     background: linear-gradient(135deg, #ffffff11, #ffffff55);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    transition: all 0.5s ease-out;
     z-index: 9999;
 }
 
-.header__scroll {
-    transition: 0.6s;
-    padding: 15px 10px 15px 0;
-    -webkit-box-shadow: 0px 4px 23px 8px rgba(12, 68, 112, 0.53);
-    -moz-box-shadow: 0px 4px 23px 8px rgba(12, 68, 112, 0.53);
-    box-shadow: 0px 4px 23px 8px rgba(12, 68, 112, 0.53);
-    
-}
-
-@keyframes rotateText {
-    0% {
-        transform: rotate(0deg) translateX(0);
-    }
-    25% {
-        transform: rotate(90deg) translateX(50px);
-    }
-    50% {
-        transform: rotate(180deg) translateX(0);
-    }
-    75% {
-        transform: rotate(270deg) translateX(-50px);
-    }
-    100% {
-        transform: rotate(360deg) translateX(0);
-    }
-}
-
-
-.header .logo, header menu li a {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.6s ease, transform 0.6s ease, font-size 0.6s ease;
-}
-
-
-.header__scroll .logo {
-    transform: translateX(-10px);
-    font-size: 1.5em;
-}
 
 header .logo {
     position: relative;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     text-decoration: none;
-    font-size: 2em;
-    transition: 0.6s;
+    font-size: 28px;
+    transform: translateX(-10px);
+    transition: all 0.3s ease-in;
+    color: black;
 }
 
 header menu {
@@ -88,6 +52,8 @@ header menu {
 header menu li {
     position: relative;
     list-style: none;
+    transform: translateX(10px);
+    transition: all 0.5s ease-in-out;
 }
 
 header menu li a {
@@ -97,8 +63,27 @@ header menu li a {
     color: #fff;
     letter-spacing: 2px;
     font-weight: 500px;
-    transition: 0.6s;
 }
+
+
+.header__scroll {
+    padding: 15px 10px 15px 0;
+    -webkit-box-shadow: 0px 4px 23px 8px rgba(12, 68, 112, 0.53);
+    -moz-box-shadow: 0px 4px 23px 8px rgba(12, 68, 112, 0.53);
+    box-shadow: 0px 4px 23px 8px rgba(12, 68, 112, 0.53); 
+}
+
+.header__scroll .logo {
+    transform: translateX(-10px);
+    font-size: 19px;
+    transition: all 0.5s ease-in;
+}
+
+.header__scroll menu li{
+    transform: translateX(20px);
+    transition: all 0.5s ease-in-out;
+}
+
 
 .container {
     top: 0;
