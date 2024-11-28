@@ -96,68 +96,59 @@ header menu li a {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
-}
-
-.tx {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.lins {
-    width: 50%;
-    height: 305px;
-    display: flex;
+    display: flex; 
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    align-content: center; 
+    justify-content: center;
 }
-.lins p {
-    font-size: 28px;
+
+.container .div {
+    margin-bottom: 5vh;
+    align-self: center;
+}
+
+.container p {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    margin-left: 25%;
+    margin-right: 25%;
+    align-self: center;
     text-align: center;
-    position: relative;
-    z-index: 2;
+    letter-spacing: normal;
+    font-weight: 500;
+    line-height: 1.2;
+
+}
+
+.container svg {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: 0;
 }
 
 #typed {
-    display: inline-block;
-    font-size: 45px;
     color: #04befe;
-    vertical-align: middle;
-    text-align: center;
-    line-height: 1.2; 
-}
-.typed-cursor {
     font-size: 45px;
+    display: inline-block;
 }
 
-
+.typed-cursor {
+    font-size: 48px;
+}
 
 .linses {
-    position: relative;
+    position: absolute;
+    bottom: 0;
     z-index: 2;
     display: flex;
-    justify-content: space-around;
     font-size: 25px;
-}
-.feature {
-    margin:0 20%;
 }
 
 .div1 {
     width: 150px;
     height: 150px;
     border-radius: 360px;
-}
-
-.container svg {
-    position: absolute;
-    bottom: 0;
-    left: 0;
 }
 
 .container2 svg {
