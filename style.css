@@ -267,9 +267,6 @@ body {
         flex-direction: column; /* Вертикальное расположение элементов */
         align-items: center; /* Центрирование элементов */
     }
-    .container .div {
-        margin-top: 85vh;
-    }
 
     .linses { 
         flex-direction: column; 
