@@ -173,7 +173,7 @@ header .menu-toggle {
     z-index: 0;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 25px;
-    margin-bottom: 5vh;
+    margin-bottom: 10vh;
     margin-left: 25%;
     margin-right: 25%;
     align-self: center;
@@ -270,10 +270,15 @@ body {
         flex-direction: column; /* Вертикальное расположение элементов */
         align-items: center; /* Центрирование элементов */
     }
+    .container .div {
+        margin-top: 85vh;
+    }
 
-    .linses {
-        margin-left: auto;
-        margin-right: auto;
+    .linses { 
+        flex-direction: column; 
+        align-items: center;
+         margin-left: auto; 
+         margin-right: auto;
     }
 
     .Item {
@@ -283,9 +288,9 @@ body {
 
     /* Стилизуем p и h1 элементы внутри контейнера */
     /* Скрываем svg элемент при уменьшении ширины экрана */
-    #soc svg {
-        width: 100%;
-        height: 100vh;
+    .fg {
+        background-color: #04befe;
+        height: 75vh;
     }
 }
 
@@ -664,3 +669,4 @@ body {
     top: 0;
     left: 0;
 }
+
