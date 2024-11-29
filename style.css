@@ -22,7 +22,7 @@ body {
     width: 100%;
     justify-content: space-around;
     align-items: center;
-    padding: 25px 0 25px 25px;
+    padding: 35px 0 35px 35px;
     background: linear-gradient(135deg, #ffffff11, #ffffff55);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -41,6 +41,14 @@ header .logo {
     transition: all 0.3s ease-in;
     color: black;
 }
+header .logo:hover {
+    background: #03e9f4;
+    color: #ffffff;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+}
 
 header menu {
     position: relative;
@@ -57,17 +65,26 @@ header menu li {
 }
 
 header menu li a {
+    color: #ffffff;
     position: relative;
     margin: 0 15px;
     text-decoration: none;
-    color: #fff;
     letter-spacing: 2px;
     font-weight: 500px;
+    transition: all 0.5s ease-in-out;
 }
 
+header menu li a:hover {
+    background: #03e9f4;
+    color: #000000;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+}
 
 .header__scroll {
-    padding: 15px 10px 15px 0;
+    padding: 25px 10px 25px 0;
     -webkit-box-shadow: 0px 4px 23px 8px rgba(12, 68, 112, 0.53);
     -moz-box-shadow: 0px 4px 23px 8px rgba(12, 68, 112, 0.53);
     box-shadow: 0px 4px 23px 8px rgba(12, 68, 112, 0.53); 
@@ -83,8 +100,50 @@ header menu li a {
     transform: translateX(20px);
     transition: all 0.5s ease-in-out;
 }
+header .menu-toggle { 
+    display: none; 
+    background: none; 
+    border: none; 
+    font-size: 28px; 
+    cursor: pointer; 
+}
 
-
+@media (max-width: 768px) {
+    header .menu-toggle { 
+        display: block; /* Показываем кнопку меню на малых экранах */ 
+    } 
+    header menu { 
+        position: absolute; 
+        top: 0; 
+        left: -30%; /* Начальная позиция за пределами экрана */ 
+        width: 30%; 
+        height: 100vh;
+        flex-direction: column; 
+        align-items: start; 
+        padding-top: 60px; 
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 32px 0 #000000;
+        background: linear-gradient(to bottom, #184b78 0%, #04befe 100%);
+    } 
+    header menu li { 
+        margin: 15px 0; 
+        width: 100%; 
+        text-align: left; /* Выравнивание ссылок по левому краю */
+    } 
+    
+    header menu li a {
+        display: block; 
+        padding: 10px 15px; 
+        color: #ffffff; 
+        text-decoration: none; 
+        font-size: 18px; 
+        transition: background 0.3s ease; 
+    } 
+    header menu.active { 
+        left: 0; /* Меню появляется на экране */
+    }
+    }
+        
 .container {
     top: 0;
     left: 0;
@@ -98,18 +157,23 @@ header menu li a {
     background-size: cover;
     display: flex; 
     flex-direction: column;
-    align-content: center; 
+    align-items: center;
     justify-content: center;
+    z-index: 0;
 }
 
 .container .div {
+    margin-top: 20vh;
+    position: relative;
     margin-bottom: 5vh;
     align-self: center;
 }
 
-.container p {
+.pr{
+    z-index: 0;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 25px;
+    margin-bottom: 5vh;
     margin-left: 25%;
     margin-right: 25%;
     align-self: center;
@@ -117,7 +181,7 @@ header menu li a {
     letter-spacing: normal;
     font-weight: 500;
     line-height: 1.2;
-
+    position: relative;
 }
 
 .container svg {
@@ -137,42 +201,174 @@ header menu li a {
     font-size: 48px;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
 .linses {
-    position: absolute;
+    margin-top: 8vh;
+    position: relative;
     bottom: 0;
-    z-index: 2;
+    z-index: 1;
     display: flex;
     font-size: 25px;
+    margin-left: 15%;
+    margin-right: 20%;
+}
+
+.Item {
+    margin-left: 5vw;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.fch {
+    margin-top: 5vh;
+}
+
+.tch {
+    margin-top: 3vh;
+}
+
+.div1,
+.div2,
+.div3 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #f5eccf,
+                0 0 25px #f5eccf,
+                0 0 50px #f5eccf,
+                0 0 200px #f5eccf;
 }
 
 .div1 {
-    width: 150px;
-    height: 150px;
-    border-radius: 360px;
+    background-image: url(sabirno.jpg);
 }
 
-.container2 svg {
-    position: absolute;
-    top: -10px;
-    left: 0;
-    
+.div2 {
+    background-image: url(prism.jpg);
 }
 
-
-.container3 svg {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+.div3 {
+    background-image: url(rasipno.jpg);
 }
 
+/* Медиазапросы для экранов шириной до 768px */
+@media (max-width: 768px) {
+    #soc {
+        display: flex;
+        flex-direction: column; /* Вертикальное расположение элементов */
+        align-items: center; /* Центрирование элементов */
+    }
+
+    .linses {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .Item {
+        margin-left: 0; /* Убираем отступ слева */
+        margin-bottom: 20px; /* Добавляем отступ снизу */
+    }
+
+    /* Стилизуем p и h1 элементы внутри контейнера */
+    /* Скрываем svg элемент при уменьшении ширины экрана */
+    #soc svg {
+        width: 100%;
+        height: 100vh;
+    }
+}
 
 .container2 {
+    background-image: url(https://ichef.bbci.co.uk/images/ic/1200xn/p03wgctw.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     height: 100vh;
     width: 100%;
     position: relative;
-    background: linear-gradient(to bottom, #184b78 0%, #04befe 100%);
+    justify-content: center;
+}
+
+
+.container2 svg {
+    position: absolute;
+}
+
+.lx {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.lx p{
+    z-index: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    margin-top: 2vh;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+    letter-spacing: normal;
+    font-weight: 500;
+    position: relative;
+    background: linear-gradient(135deg, #ffffff05, #ffffff00);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid #ffffff18;
+    border-radius: 25px;
+    padding: 20px 20px 20px 20px;
+    box-shadow: 0 8px 32px 0 #000000;
+}
+
+.lx ul li {
+    margin-top: 5vh;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+
+#wave1 {
+    align-self: flex-end;
+}
+
+
+#typed2 {
+    font-size: 45px;
+    display: inline-block;
+    color: #FFF;
+
+}
+
+.kons{
+    height: 25vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(#184b78, rgba(0, 0, 0, 1));
+}
+
+#typed3 {
+    font-size: 45px;
+    display: inline-block;
+    color: #FFF;
+
 }
 
 .container3 {
@@ -180,14 +376,291 @@ header menu li a {
     height: 100vh;
     width: 100%;
     position: relative;
-    background: linear-gradient(to top, #184b78 0%, #04befe 100%);
+    background: linear-gradient(to bottom, #184b78 0%, #04befe 100%);
+}
+
+.text {
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    text-align: left;
+    gap: 5%;
+    margin-left: 5vh;
+    letter-spacing: normal;
+    text-shadow: 0 0 5px #FFF, 0 0 20px #184b78, 0 0 30px #184b78, 0 0 40px #184b78, 0 0 55px #184b78, 0 0 75px #184b78;
+}
+
+
+.pict {
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pict img{
+    border-radius: 30px;
+    box-shadow: 0 8px 32px 0 #000000;
+}
+
+.container3 svg {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.pm{
+    height: 15vh;
+    width: 100%;
+    position: relative;
+    background-color: #FFF;
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    color: #000000;
+}
+
+.pm p {
+    text-align: center;
+    font-size: 40px;
+    align-self: center;
+}
+
+.pm svg {
+    position: absolute;
+    align-self: flex-start;
+    z-index: 1;
+    fill: #04befe;
 }
 
 .container4 {
     width: 100%;
     height: 100vh;
-    background-image: url(https://static.tildacdn.com/tild3230-6532-4930-b766-346566323666/4QAAAgDJaeA-1920.jpg);
+    background: url(https://upload.wikimedia.org/wikipedia/commons/8/82/Large_convex_lens.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+    z-index: 0;
+    display: flex;
+}
+
+
+.text-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5vh;
+    margin-left: 2vw;
+}
+
+.text-container ol li {
+    text-align: left;
+    font-size: 30px;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #000000;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #f5ecda, 0 0 30px#f5ecda, 0 0 40px #f5ecda, 0 0 55px #f5ecda, 0 0 75px #f5ecda;
+}
+
+.text-container h2 {
+    font-size: 25px;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000000;
+}
+.yutem {
+    margin-left: 5vw;
+}
+
+.container4 svg {
+    fill: #04befe55;
+    margin-left: -2vw;
+    position: absolute;
+    z-index: 0;
+    align-self: flex-end;
+}
+
+.container8 {
+    width: 100%;
+    height: 100vh;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/3/32/Concave_lens.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 0;
+    display: flex;
+}
+
+.container8 svg {
+    fill: #04befe55;
+    margin-left: -2vw;
+    position: absolute;
+    z-index: 0;
+    align-self: flex-end;
+}
+
+.container5 {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: linear-gradient(to bottom, #184b78 0%, #04befe 100%);
+}
+
+.container5 svg {
+    z-index: 0;
+    position: absolute;
+}
+
+#wave7  {
+    align-self: flex-start;
+}
+
+#wave8 {
+    align-self: flex-end;
+}
+
+.text2 {
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    text-align: left;
+    gap: 5%;
+    margin-left: 5vh;
+    letter-spacing: normal;
+    text-shadow: 0 0 5px #FFF, 0 0 20px #184b78, 0 0 30px #184b78, 0 0 40px #184b78, 0 0 55px #184b78, 0 0 75px #184b78;
+}
+
+.text2 p {
+    text-align: center;
+}
+
+.text2 ol li{
+    text-align: left;
+}
+
+.pict2 {
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pict2 img{
+    border-radius: 30px;
+    box-shadow: 0 8px 32px 0 #000000;
+}
+
+.kons2 {
+    height: 25vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #184b78 0%, #04befe 100%);
+}
+
+#typed4 {
+    font-size: 45px;
+    display: inline-block;
+    color: #FFF;
+}
+
+.container6 {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: linear-gradient(to top, #184b78 0%, #04befe 100%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5vh;
+}
+
+.container6 h2 {
+    margin-left: 2vw;
+    text-align: left;
+    font-size: 40px;
+}
+
+.container6 ul li {
+    text-align: left;
+    font-size: 30px;
+}
+.container6 ul {
+    margin-left: 2vw;
+}
+
+.container6 svg {
+    position: absolute;
+    z-index: 0;
+}
+
+#wave9 {
+    top: 0;
+    left: 0;
+}
+
+#wave10 {
+    bottom: 0;
+    left: 0;
+}
+
+.container7 {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: linear-gradient(to bottom, #184b78 0%, #04befe 100%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5vh;
+
+}
+
+.container7 h2 {
+    margin-left: 2vw;
+    text-align: left;
+    font-size: 40px;
+}
+
+.container7 ul li {
+    text-align: left;
+    font-size: 30px;
+}
+.container7 ul {
+    margin-left: 2vw;
+}
+
+.container7 svg {
+    position: absolute;
+    z-index: 0;
+}
+
+.container7 svg {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
 }
