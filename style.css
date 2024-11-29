@@ -249,15 +249,15 @@ body {
 }
 
 .div1 {
-    background-image: url(sabirno.jpg);
+    background-image: url(/sabirno.jpg);
 }
 
 .div2 {
-    background-image: url(prism.jpg);
+    background-image: url(/prism.jpg);
 }
 
 .div3 {
-    background-image: url(rasipno.jpg);
+    background-image: url(/rasipno.jpg);
 }
 
 /* Медиазапросы для экранов шириной до 768px */
