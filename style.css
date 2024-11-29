@@ -108,7 +108,7 @@ header .menu-toggle {
     cursor: pointer; 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     header .menu-toggle { 
         display: block; /* Показываем кнопку меню на малых экранах */ 
     } 
@@ -264,7 +264,7 @@ body {
 }
 
 /* Медиазапросы для экранов шириной до 768px */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     #soc {
         display: flex;
         flex-direction: column; /* Вертикальное расположение элементов */
@@ -413,6 +413,55 @@ body {
     box-shadow: 0 8px 32px 0 #000000;
 }
 
+.pict {
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pict img{
+    border-radius: 30px;
+    box-shadow: 0 8px 32px 0 #000000;
+}
+
+/* Медиазапросы для экранов шириной до 768px */
+@media (max-width: 100px) {
+    .container3 {
+        flex-direction: column; /* Изменяем направление флекс-контейнера на колонку */
+        height: auto; /* Высота контейнера автоматически подстраивается */
+    }
+
+    .text, .pict {
+        width: 100%; /* Элементы занимают всю ширину контейнера */
+        height: auto; /* Высота элементов автоматически подстраивается */
+        margin-left: 0; /* Убираем отступ слева */
+        margin-bottom: 20px; /* Добавляем отступ снизу для разделения элементов */
+    }
+
+    .text {
+        text-align: center; /* Центрируем текст для улучшения читаемости */
+    }
+
+    .text p, .text ol {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .text {
+        margin-bottom: 75vh;
+        font-size: 20px;
+
+    }
+
+    .pict img {
+        width: 80%; /* Уменьшаем размер изображения на маленьких экранах */
+    }
+}
+
 .container3 svg {
     width: 100%;
     position: absolute;
@@ -529,6 +578,41 @@ body {
     z-index: 0;
     position: absolute;
 }
+@media (max-width: 100px) {
+    .container3 {
+        flex-direction: column; /* Изменяем направление флекс-контейнера на колонку */
+        height: auto; /* Высота контейнера автоматически подстраивается */
+    }
+
+    .text2, .pict2 {
+        width: 100%; /* Элементы занимают всю ширину контейнера */
+        height: auto; /* Высота элементов автоматически подстраивается */
+        margin-left: 0; /* Убираем отступ слева */
+        margin-bottom: 20px; /* Добавляем отступ снизу для разделения элементов */
+    }
+
+    .text2 {
+        text-align: center; /* Центрируем текст для улучшения читаемости */
+    }
+
+    .text2 p, .text ol {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .text2 {
+        margin-bottom: 75vh;
+        font-size: 20px;
+
+    }
+
+    .pict2 img {
+        width: 80%; /* Уменьшаем размер изображения на маленьких экранах */
+    }
+}
+
 
 #wave7  {
     align-self: flex-start;
