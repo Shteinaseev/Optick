@@ -92,7 +92,7 @@ header menu li a:hover {
 
 .header__scroll .logo {
     transform: translateX(-10px);
-    font-size: 19px;
+    font-size: 10px;
     transition: all 0.5s ease-in;
 }
 
@@ -163,9 +163,8 @@ header .menu-toggle {
 }
 
 .container .div {
-    margin-top: 20vh;
+    margin-top: 25%;
     position: relative;
-    margin-bottom: 5vh;
     align-self: center;
 }
 
@@ -173,7 +172,7 @@ header .menu-toggle {
     z-index: 0;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 25px;
-    margin-bottom: 10vh;
+    margin-bottom: 2vh;
     margin-left: 25%;
     margin-right: 25%;
     align-self: center;
@@ -212,9 +211,7 @@ body {
 }
 
 .linses {
-    margin-top: 8vh;
     position: relative;
-    bottom: 0;
     z-index: 1;
     display: flex;
     font-size: 25px;
@@ -753,4 +750,3 @@ body {
     top: 0;
     left: 0;
 }
-
