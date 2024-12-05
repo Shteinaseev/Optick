@@ -10,6 +10,14 @@ window.addEventListener("scroll", function(){
     }
 })
 
+let menu = document.querySelector('#menu-btn')
+let navbar = document.querySelector('.navbar')
+
+menu.onclick = () => {
+    menu.classList.toggle('fa-xmark')
+    navbar.classList.toggle('active')
+}
+
 var options = {
     strings: ["Šta su sočiva?"],
     typeSpeed: 50, // Скорость печати
@@ -25,16 +33,26 @@ var typed = new Typed("#typed", options);
 
 var options1 = {
     strings: ["Reflakcija.", "Prelamanje svetlosti."],
-    typeSpeed: 50, // Скорость печати
-    backSpeed: 0, // Скорость удаления (0 - не удалять)
+    typeSpeed: 40, // Скорость печати
+    backSpeed: 30, // Скорость удаления (0 - не удалять)
     loop: false, // Отключить цикличность
     cursorChar: '|',  // Символ курсора
     startDelay: 500,
     showCursor: true 
 };
 
-var typed2 = new Typed("#typed2", options1);
+function startTyping(){
+    new Typed("#typed2", options1);
+}
 
+window.addEventListener('scroll', function(){
+    var element = document.getElementById("typed2")
+    var position = element.getBoundingClientRect();
+    if(position.top >= 0 && position.bottom <= window.innerHeight){
+        startTyping();
+        window.removeEventListener('scroll', arguments.callee)
+    }
+})
 
 var options2 = {
     strings: ["Konstrukcija lika kod sabirnih sočiva."],
@@ -62,4 +80,3 @@ var options3 = {
 
 var typed4 = new Typed("#typed4", options3);
 
-document.addEventListener('DOMContentLoaded', function() { const menuToggle = document.querySelector('.menu-toggle'); const navMenu = document.querySelector('menu'); menuToggle.addEventListener('click', function() { navMenu.classList.toggle('active'); }); });
