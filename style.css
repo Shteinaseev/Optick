@@ -10,38 +10,40 @@ body {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     color: white;
 }
 
+p{
+    z-index: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3rem;
+}
 .header {
     position: fixed;
-    top: 0;
-    left: 0;
     display: flex;
     width: 100%;
     justify-content: space-around;
     align-items: center;
-    padding: 35px 0 35px 35px;
     background: linear-gradient(135deg, #ffffff11, #ffffff55);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    transition: all 0.5s ease-out;
+    padding: 2rem 0 2rem 0.7rem;
+    transition: all 0.4s ease-out;
     z-index: 9999;
 }
 
 
-header .logo {
+.header .logo {
     position: relative;
     font-weight: 700;
     letter-spacing: 4px;
     text-decoration: none;
-    font-size: 15px;
-    transform: translateX(-10px);
-    transition: all 0.3s ease-in;
+    font-size: 1.3rem;
+    transition: all 0.3s ease-in-out;
     color: black;
 }
-header .logo:hover {
+.header .logo:hover {
     background: #03e9f4;
     color: #ffffff;
     box-shadow: 0 0 5px #03e9f4,
@@ -50,31 +52,16 @@ header .logo:hover {
                 0 0 200px #03e9f4;
 }
 
-header menu {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-header menu li {
-    position: relative;
-    list-style: none;
-    transform: translateX(10px);
-    transition: all 0.5s ease-in-out;
-}
-
-header menu li a {
+.header .navbar a{
+    font-size: 1rem;
     color: #ffffff;
-    position: relative;
-    margin: 0 15px;
+    margin: 0 2rem;
+    transition: all 0.4s ease-in;
     text-decoration: none;
     letter-spacing: 2px;
-    font-weight: 500px;
-    transition: all 0.5s ease-in-out;
-}
 
-header menu li a:hover {
+}
+.header .navbar a:hover {
     background: #03e9f4;
     color: #000000;
     box-shadow: 0 0 5px #03e9f4,
@@ -84,139 +71,135 @@ header menu li a:hover {
 }
 
 .header__scroll {
-    padding: 25px 10px 25px 0;
+    padding: 1rem 2rem 20px 0;
     -webkit-box-shadow: 0px 4px 23px 8px rgba(12, 68, 112, 0.53);
     -moz-box-shadow: 0px 4px 23px 8px rgba(12, 68, 112, 0.53);
     box-shadow: 0px 4px 23px 8px rgba(12, 68, 112, 0.53); 
 }
 
 .header__scroll .logo {
-    transform: translateX(-10px);
-    font-size: 10px;
-    transition: all 0.5s ease-in;
+    font-size: 1.2rem;
+    transition: all 0.4s ease-in;
 }
 
-.header__scroll menu li{
-    transform: translateX(20px);
-    transition: all 0.5s ease-in-out;
-}
-header .menu-toggle { 
-    display: none; 
-    background: none; 
-    border: none; 
-    font-size: 28px; 
-    cursor: pointer; 
+.header__scroll .navbar a {
+    transition: all 0.4s ease-in;
 }
 
-@media (max-width: 1000px) {
+#menu-btn{
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 991px) {
     header .menu-toggle { 
         display: block; /* Показываем кнопку меню на малых экранах */ 
-    } 
-    header menu { 
-        position: absolute; 
-        top: 0; 
-        left: -30%; /* Начальная позиция за пределами экрана */ 
-        width: 30%; 
-        height: 100vh;
-        flex-direction: column; 
-        align-items: start; 
-        padding-top: 60px; 
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 32px 0 #000000;
+    }
+    html {
+        font-size: 65%;
+    }
+
+    .header {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px){
+    #menu-btn{
+        display: initial;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
         background: linear-gradient(to bottom, #184b78 0%, #04befe 100%);
-    } 
-    header menu li { 
-        margin: 15px 0; 
-        width: 100%; 
-        text-align: left; /* Выравнивание ссылок по левому краю */
-    } 
-    
-    header menu li a {
-        display: block; 
-        padding: 10px 15px; 
-        color: #ffffff; 
-        text-decoration: none; 
-        font-size: 18px; 
-        transition: background 0.3s ease; 
-    } 
-    header menu.active { 
-        left: 0; /* Меню появляется на экране */
+        clip-path: polygon(0 0, 100% 0, 100% 0);
     }
+
+    .header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%,0 100%);
     }
-        
+
+    .navbar a {
+        display: block;
+        font-size: 2.2rem;
+        padding: 1.5rem 2rem;
+    }
+
+} 
+
 .container {
-    top: 0;
-    left: 0;
-    margin-top: 0;
-    padding: 0;
     width: 100%;
-    height: 100vh;
-    background: url(https://i.pinimg.com/originals/1d/53/c7/1d53c7ffb9d4cd4eb4a916ba1a49f245.jpg);
+    height: auto;
+    display: flex;
+    flex-direction: column;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    display: flex; 
+    background: url(https://i.pinimg.com/originals/1d/53/c7/1d53c7ffb9d4cd4eb4a916ba1a49f245.jpg);
+    justify-content: space-between;
+}
+
+.text__container {
+    width: 100%;
+    height: 55vh;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    z-index: 0;
+    justify-content: flex-end;
+    gap: 4rem;
 }
 
-.container .div {
-    margin-top: 25%;
-    position: relative;
-    align-self: center;
-}
-
-.pr{
-    z-index: 0;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 25px;
-    margin-bottom: 2vh;
+.pr {
+    font-size: 1.5rem;
     margin-left: 25%;
     margin-right: 25%;
-    align-self: center;
     text-align: center;
-    letter-spacing: normal;
-    font-weight: 500;
-    line-height: 1.2;
-    position: relative;
-}
-
-.container svg {
-    position: absolute;
-    z-index: 0;
-    bottom: 0;
-    left: 0;
 }
 
 #typed {
+    font-size: 2.5rem;
     color: #04befe;
-    font-size: 45px;
     display: inline-block;
 }
 
 .typed-cursor {
-    font-size: 48px;
+    font-size: 2.6rem;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.svg__container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 45vh;
 }
 
-body {
-    font-family: Arial, sans-serif;
+
+.svg__container svg{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.fg {
+    position: absolute;
+    align-self: flex-end;
+    height: 0;
+    width: 100%;
 }
 
 .linses {
+    align-self: flex-end;
     position: relative;
     z-index: 1;
     display: flex;
-    font-size: 25px;
+    font-size: 1.2rem;
     margin-left: 15%;
-    margin-right: 20%;
+    margin-right: 15%;
+    margin-bottom: 2rem;
 }
 
 .Item {
@@ -235,6 +218,7 @@ body {
 .tch {
     margin-top: 3vh;
 }
+
 
 .div1,
 .div2,
@@ -261,31 +245,39 @@ body {
 }
 
 /* Медиазапросы для экранов шириной до 768px */
-@media (max-width: 1000px) {
-    #soc {
-        display: flex;
-        flex-direction: column; /* Вертикальное расположение элементов */
-        align-items: center; /* Центрирование элементов */
-    }
+@media (max-width: 875px) {
+
 
     .linses { 
         flex-direction: column; 
         align-items: center;
-         margin-left: auto; 
-         margin-right: auto;
+        margin-left: auto; 
+        margin-right: auto;
+        position: absolute;
+        gap: 10px;
     }
 
     .Item {
-        margin-left: 0; /* Убираем отступ слева */
-        margin-bottom: 20px; /* Добавляем отступ снизу */
+        margin-left: 0; 
     }
 
-    /* Стилизуем p и h1 элементы внутри контейнера */
-    /* Скрываем svg элемент при уменьшении ширины экрана */
+    .svg__container{
+        height: auto;
+    }
+
     .fg {
         background-color: #04befe;
-        height: 75vh;
+        width: 100%;
+        height: 90vh;
+        position: relative;
+        z-index: 0;
     }
+
+    .svg__container svg {
+        z-index: 0;
+        position: relative;
+    }
+
 }
 
 .container2 {
@@ -293,64 +285,67 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    display: flex;
     height: 100vh;
     width: 100%;
     position: relative;
-    justify-content: center;
 }
 
 
-.container2 svg {
+.svT{
+    z-index: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.svB{
+    z-index: 1;
+    bottom: 0;
+    left: 0;
     position: absolute;
 }
 
 .lx {
+    z-index: 2;
     width: 100%;
-    height: 100%;
+    height: 65vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    gap: 2.5rem;
 }
 
 
 .lx p{
-    z-index: 0;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 25px;
-    margin-top: 2vh;
+    font-size: 1.5rem;
     margin-left: 25%;
     margin-right: 25%;
     text-align: center;
-    letter-spacing: normal;
-    font-weight: 500;
     position: relative;
     background: linear-gradient(135deg, #ffffff05, #ffffff00);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid #ffffff18;
     border-radius: 25px;
-    padding: 20px 20px 20px 20px;
+    padding: 0.8rem 0.8rem 0.8rem 0.8rem;
     box-shadow: 0 8px 32px 0 #000000;
+    letter-spacing: normal;
+    text-shadow: 4px 4px 12px #184b78;
 }
 
 .lx ul li {
-    margin-top: 5vh;
-    font-size: 30px;
+    font-size: 1.4rem;
     color: #FFFFFF;
-}
-
-#wave1 {
-    align-self: flex-end;
 }
 
 
 #typed2 {
-    font-size: 45px;
+    font-size: 2.5rem;
     display: inline-block;
     color: #FFF;
-
+    text-shadow: 0 1px 32px #04befe;
 }
 
 .kons{
@@ -364,10 +359,9 @@ body {
 }
 
 #typed3 {
-    font-size: 45px;
+    font-size: 2rem;
     display: inline-block;
     color: #FFF;
-
 }
 
 .container3 {
@@ -385,82 +379,75 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
-    text-align: left;
-    gap: 5%;
-    margin-left: 5vh;
+    gap: 5rem;
     letter-spacing: normal;
-    text-shadow: 0 0 5px #FFF, 0 0 20px #184b78, 0 0 30px #184b78, 0 0 40px #184b78, 0 0 55px #184b78, 0 0 75px #184b78;
+    z-index: 2;
+    margin-left: 2vw;
 }
 
+.text h3{
+    font-size: 1.85rem;
+    text-align: left;
+}
+
+#hf{
+    color: #FFF;
+}
+.text ol li {
+    margin: 2vh;
+    font-size: 1.6rem;
+    text-align: left;
+}
+
+#ol{
+    text-shadow: 0 0 5px #ffffff, 0 0 20px #184b78, 0 0 30px #184b78, 0 0 40px #184b78, 0 0 55px #184b78, 0 0 75px #184b78;
+}
 
 .pict {
-    height: 100vh;
+    height: 100%;
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2;
 }
 
 .pict img{
     border-radius: 30px;
     box-shadow: 0 8px 32px 0 #000000;
+    width: 30rem;
 }
 
-.pict {
-    height: 100vh;
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+@media (max-width:768px){
 
-.pict img{
-    border-radius: 30px;
-    box-shadow: 0 8px 32px 0 #000000;
-}
-
-/* Медиазапросы для экранов шириной до 768px */
-@media (max-width: 100px) {
-    .container3 {
-        flex-direction: column; /* Изменяем направление флекс-контейнера на колонку */
-        height: auto; /* Высота контейнера автоматически подстраивается */
+    html {
+        font-size: 65%;
     }
-
-    .text, .pict {
-        width: 100%; /* Элементы занимают всю ширину контейнера */
-        height: auto; /* Высота элементов автоматически подстраивается */
-        margin-left: 0; /* Убираем отступ слева */
-        margin-bottom: 20px; /* Добавляем отступ снизу для разделения элементов */
+    .container3{
+        flex-direction: column;
     }
 
     .text {
-        text-align: center; /* Центрируем текст для улучшения читаемости */
+        justify-content: flex-end;
+        width: 100%;
+        height: 60%;
+        gap: 3rem;
     }
 
-    .text p, .text ol {
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-}
-
-@media (max-width: 1000px) {
-    .text {
-        margin-bottom: 75vh;
-        font-size: 20px;
-
+    .text h3{
+        text-align: center;
     }
 
-    .pict img {
-        width: 80%; /* Уменьшаем размер изображения на маленьких экранах */
+    .pict {
+        align-items: flex-start;
+        width: 100%;
+        height: 30%;
     }
-}
-
-.container3 svg {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+    .pict img{
+        border-radius: 30px;
+        box-shadow: 0 8px 32px 0 #000000;
+        width: 24rem;
+    }
 }
 
 .pm{
@@ -469,7 +456,7 @@ body {
     position: relative;
     background-color: #FFF;
     position: absolute;
-    z-index: 0;
+    z-index: 1;
     display: flex;
     justify-content: center;
     color: #000000;
@@ -477,7 +464,7 @@ body {
 
 .pm p {
     text-align: center;
-    font-size: 40px;
+    font-size: 2rem;
     align-self: center;
 }
 
@@ -488,57 +475,65 @@ body {
     fill: #04befe;
 }
 
-.container4 {
-    width: 100%;
-    height: 100vh;
+#vsc {
     background: url(https://upload.wikimedia.org/wikipedia/commons/8/82/Large_convex_lens.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    z-index: 0;
-    display: flex;
 }
 
-
-.text-container {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 5vh;
-    margin-left: 2vw;
-}
-
-.text-container ol li {
-    text-align: left;
-    font-size: 30px;
-    font-family:Arial, Helvetica, sans-serif;
-    color: #000000;
-    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #f5ecda, 0 0 30px#f5ecda, 0 0 40px #f5ecda, 0 0 55px #f5ecda, 0 0 75px #f5ecda;
-}
-
-.text-container h2 {
-    font-size: 25px;
-    text-align: left;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #000000;
-}
-.yutem {
-    margin-left: 5vw;
-}
-
-.container4 svg {
+#tr{
     fill: #04befe55;
     margin-left: -2vw;
     position: absolute;
     z-index: 0;
     align-self: flex-end;
 }
+#hs {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000000;
+}
+
+#ol2 {
+    color: #000000;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #f5ecda, 0 0 30px#f5ecda, 0 0 40px #f5ecda, 0 0 55px #f5ecda, 0 0 75px #f5ecda;
+}
+
+.images{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.image1,
+.image2,
+.image3 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #f5eccf,
+                0 0 25px #f5eccf,
+                0 0 50px #f5eccf,
+                0 0 200px #f5eccf;
+}
+
+.image1 {
+    background-image: url(https://i.postimg.cc/cCHcTbDK/Dvoyakovypuklyye.png);
+}
+
+.image2 {
+    background-image: url(https://i.postimg.cc/K8y9BxXj/Ploskovipukliye.png);
+}
+
+.image3 {
+    background-image: url(https://i.postimg.cc/R0SXpdZz/Vognoto-vipuklyiye.png);
+}
+
 
 .container8 {
     width: 100%;
@@ -572,41 +567,6 @@ body {
     z-index: 0;
     position: absolute;
 }
-@media (max-width: 100px) {
-    .container3 {
-        flex-direction: column; /* Изменяем направление флекс-контейнера на колонку */
-        height: auto; /* Высота контейнера автоматически подстраивается */
-    }
-
-    .text2, .pict2 {
-        width: 100%; /* Элементы занимают всю ширину контейнера */
-        height: auto; /* Высота элементов автоматически подстраивается */
-        margin-left: 0; /* Убираем отступ слева */
-        margin-bottom: 20px; /* Добавляем отступ снизу для разделения элементов */
-    }
-
-    .text2 {
-        text-align: center; /* Центрируем текст для улучшения читаемости */
-    }
-
-    .text2 p, .text ol {
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-}
-
-@media (max-width: 1000px) {
-    .text2 {
-        margin-bottom: 75vh;
-        font-size: 20px;
-
-    }
-
-    .pict2 img {
-        width: 80%; /* Уменьшаем размер изображения на маленьких экранах */
-    }
-}
-
 
 #wave7  {
     align-self: flex-start;
@@ -747,3 +707,4 @@ body {
     top: 0;
     left: 0;
 }
+
