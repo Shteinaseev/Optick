@@ -98,6 +98,7 @@ p{
     }
 
     .header {
+        justify-content: center;
         padding: 2rem;
     }
 }
