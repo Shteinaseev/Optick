@@ -96,9 +96,6 @@ p{
     header .menu-toggle { 
         display: block; /* Показываем кнопку меню на малых экранах */ 
     }
-    html {
-        font-size: 65%;
-    }
 
     .header {
         padding: 2rem;
@@ -106,6 +103,10 @@ p{
 }
 
 @media (max-width: 768px){
+    html {
+        font-size: 50%;
+    }
+
     #menu-btn{
         display: initial;
     }
@@ -355,6 +356,8 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+#Liks {
     background: radial-gradient(#184b78, rgba(0, 0, 0, 1));
 }
 
@@ -372,7 +375,8 @@ p{
     background: linear-gradient(to bottom, #184b78 0%, #04befe 100%);
 }
 
-.text {
+.text,
+.text2 {
     height: 100vh;
     width: 50%;
     display: flex;
@@ -385,19 +389,37 @@ p{
     margin-left: 2vw;
 }
 
-.text h3{
+
+.text h3,
+.text2 h3{
     font-size: 1.85rem;
     text-align: left;
+    margin-right: 10vw;
+}
+.text p{
+    font-size: 1.62rem;
+    text-align: left;
+    margin-right: 10vw;
+    text-shadow: 0 0 5px #ffffff, 0 0 20px #184b78, 0 0 30px #184b78, 0 0 40px #184b78, 0 0 55px #184b78, 0 0 75px #184b78;
 }
 
 #hf{
     color: #FFF;
 }
-.text ol li {
+.text ol li{
     margin: 2vh;
     font-size: 1.6rem;
     text-align: left;
+    margin-right: 10vw;
 }
+
+.text2 ul li{
+    margin: 2vh;
+    font-size: 1.6rem;
+    text-align: left;
+    margin-right: 10vw;
+}
+
 
 #ol{
     text-shadow: 0 0 5px #ffffff, 0 0 20px #184b78, 0 0 30px #184b78, 0 0 40px #184b78, 0 0 55px #184b78, 0 0 75px #184b78;
@@ -434,6 +456,13 @@ p{
         gap: 3rem;
     }
 
+    .text2 {
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        gap: 3rem;
+    }
+
     .text h3{
         text-align: center;
     }
@@ -448,6 +477,7 @@ p{
         box-shadow: 0 8px 32px 0 #000000;
         width: 24rem;
     }
+
 }
 
 .pm{
@@ -482,13 +512,20 @@ p{
     background-size: cover;
     background-attachment: fixed;
 }
+#vrc {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/3/32/Concave_lens.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
 
 #tr{
     fill: #04befe55;
-    margin-left: -2vw;
     position: absolute;
     z-index: 0;
-    align-self: flex-end;
+    bottom: 0;
+    left: 0;
 }
 #hs {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -500,14 +537,15 @@ p{
     text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #f5ecda, 0 0 30px#f5ecda, 0 0 40px #f5ecda, 0 0 55px #f5ecda, 0 0 75px #f5ecda;
 }
 
-.images{
+.imges{
     height: 100%;
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    z-index: 2;
+    gap: 0.5rem;
 }
 
 .image1,
@@ -523,188 +561,69 @@ p{
 }
 
 .image1 {
-    background-image: url(https://i.postimg.cc/cCHcTbDK/Dvoyakovypuklyye.png);
+    background-image: url(https://i.postimg.cc/sx92mq9p/Dvoyakovypuklyye.jpg);
 }
 
 .image2 {
-    background-image: url(https://i.postimg.cc/K8y9BxXj/Ploskovipukliye.png);
+    background-image: url(https://i.postimg.cc/4NKYrfb3/Plosko-vipuklye.jpg);
 }
 
 .image3 {
-    background-image: url(https://i.postimg.cc/R0SXpdZz/Vognoto-vipuklyiye.png);
+    background-image: url(https://i.postimg.cc/1t1PdMzM/Vognuto-vipuklye.jpg);
 }
 
 
-.container8 {
-    width: 100%;
-    height: 100vh;
-    background: url(https://upload.wikimedia.org/wikipedia/commons/3/32/Concave_lens.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    z-index: 0;
-    display: flex;
+@media(max-width: 768px){
+    .imges {
+        width: 100%;
+        height: 50%;
+        flex-direction: row;
+    }
 }
 
-.container8 svg {
-    fill: #04befe55;
-    margin-left: -2vw;
-    position: absolute;
-    z-index: 0;
-    align-self: flex-end;
-}
-
-.container5 {
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    background: linear-gradient(to bottom, #184b78 0%, #04befe 100%);
-}
-
-.container5 svg {
-    z-index: 0;
-    position: absolute;
-}
-
-#wave7  {
-    align-self: flex-start;
-}
-
-#wave8 {
-    align-self: flex-end;
-}
-
-.text2 {
-    height: 100vh;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    text-align: left;
-    gap: 5%;
-    margin-left: 5vh;
-    letter-spacing: normal;
-    text-shadow: 0 0 5px #FFF, 0 0 20px #184b78, 0 0 30px #184b78, 0 0 40px #184b78, 0 0 55px #184b78, 0 0 75px #184b78;
-}
-
-.text2 p {
-    text-align: center;
-}
-
-.text2 ol li{
-    text-align: left;
-}
-
-.pict2 {
-    height: 100vh;
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.pict2 img{
-    border-radius: 30px;
-    box-shadow: 0 8px 32px 0 #000000;
-}
-
-.kons2 {
-    height: 25vh;
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#Likr {
     background: linear-gradient(to bottom, #184b78 0%, #04befe 100%);
 }
 
 #typed4 {
-    font-size: 45px;
+    font-size: 2rem;
     display: inline-block;
     color: #FFF;
 }
 
-.container6 {
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    position: relative;
+
+.rasp1,
+.rasp2,
+.rasp3 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #f5eccf,
+                0 0 25px #f5eccf,
+                0 0 50px #f5eccf,
+                0 0 200px #f5eccf;
+}
+
+.rasp1 {
+    background-image: url(https://i.postimg.cc/CxLs3JVw/Dvoyako-vognutiye.jpg);
+}
+
+.rasp2 {
+    background-image: url(https://i.postimg.cc/vZqtb9Qf/Plosko-vognutiye.jpg);
+}
+
+.rasp3 {
+    background-image: url(https://i.postimg.cc/43YbdddM/Vipuklo-vognutiye.jpg);
+}
+
+#of {
     background: linear-gradient(to top, #184b78 0%, #04befe 100%);
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 5vh;
 }
 
-.container6 h2 {
-    margin-left: 2vw;
-    text-align: left;
-    font-size: 40px;
+#pos {
+    height: 200vh;
 }
 
-.container6 ul li {
-    text-align: left;
-    font-size: 30px;
+#ph{
+    align-self: center;
 }
-.container6 ul {
-    margin-left: 2vw;
-}
-
-.container6 svg {
-    position: absolute;
-    z-index: 0;
-}
-
-#wave9 {
-    top: 0;
-    left: 0;
-}
-
-#wave10 {
-    bottom: 0;
-    left: 0;
-}
-
-.container7 {
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    background: linear-gradient(to bottom, #184b78 0%, #04befe 100%);
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 5vh;
-
-}
-
-.container7 h2 {
-    margin-left: 2vw;
-    text-align: left;
-    font-size: 40px;
-}
-
-.container7 ul li {
-    text-align: left;
-    font-size: 30px;
-}
-.container7 ul {
-    margin-left: 2vw;
-}
-
-.container7 svg {
-    position: absolute;
-    z-index: 0;
-}
-
-.container7 svg {
-    position: absolute;
-    z-index: 0;
-    top: 0;
-    left: 0;
-}
-
